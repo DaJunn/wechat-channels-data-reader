@@ -1,0 +1,4 @@
+interface:
+  display_name: "视频号数据读取"
+  short_description: "读取视频号已登录大屏、成交分钟趋势和导出表，按小浪花口径复盘。"
+  default_prompt: "Use $wechat-channels-data-reader to read the current WeChat Channels dashboard, export minute traffic and transaction trend CSV when needed, include channel traffic/heat traffic share, and produce a concise WaveKOL trend or business review with talent and operator suggestions."

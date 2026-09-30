@@ -1,0 +1,22 @@
+[
+  {
+    "id": "minute_lookup",
+    "prompt": "11:19 的曝光、进房、在线分别是多少？",
+    "expected": "使用 dashboardV4 iframe runtime store 或已导出的分钟 CSV，返回 11:19 的 exposure、entry、online，并标注数据来源。"
+  },
+  {
+    "id": "trend_analysis",
+    "prompt": "请你做一个趋势分析，描述本场的情况。",
+    "expected": "先导出或读取分钟趋势 CSV，再按数据口径、整场基础盘、关键峰值、成交峰值、阶段拆解、判断、下一步输出，不使用截图估算。"
+  },
+  {
+    "id": "paid_trend_export",
+    "prompt": "这场是有成交的，请把成交金额接入分钟趋势。",
+    "expected": "从 dashboardV4 iframe store 的 ecConversionDashboardEcData.ecTread 读取 gmvTread/payPvTread/payUvTread，输出 transaction_amount/order_count/buyer_count；gmvTread 原值按分转元。"
+  },
+  {
+    "id": "html_or_screenshot_limit",
+    "prompt": "我下载了视频号助手 HTML 或给了一张趋势截图，你能精确读每一分钟吗？",
+    "expected": "明确说明 HTML/截图通常不能精确还原整条分钟趋势；优先要求已登录页面 store、Network JSON 或 CSV，若只能截图则输出 _est 估算字段。"
+  }
+]
