@@ -6,18 +6,18 @@
 
 读取优先级（不截图）：
 
-1. Network / 页面接口 JSON（canvas 数据大屏只能走这条）
+1. Network / 页面接口 JSON（以实际返回为准）
 2. dashboardV4 iframe 运行时 store（分钟趋势图常在这里）
 3. DOM 可见文本（order-list 等文本型页面）
 
-两者都拿不到时：切 tab / 刷新后用 `--watch-ms` + `--network-details` 重跑；仍无则报“读取失败”，不要退回截图。
+以上路径都拿不到时：切 tab / 刷新后用 `--watch-ms` + `--network-details` 重跑；仍无则报“读取失败”，不要退回截图。
 
 ## 必做安全边界
 
 - 只复用用户已经打开的 `channels.weixin.qq.com` 页面。
 - 不代登录、不扫码、不保存登录态。
-- 不读取或输出 cookie、authorization、token、secret、localStorage、sessionStorage。
-- 不点击“导出”“提交”“删除”“保存”等会改变后台状态的按钮，除非用户明确要求并在动作前确认。
+- 不主动读取 cookie、authorization、token、secret、localStorage、sessionStorage；网络详情如含敏感字段，不保留到交付文件。自动脱敏不能保证覆盖响应中的所有嵌套字符串，分享前还需检查。
+- 不点击“导出”“提交”“删除”“保存”等会改变后台状态的按钮，除非用户明确要求且授权覆盖该动作。
 - 页面接口只作为本次复盘数据源，不沉淀敏感原始响应到公开目录。
 
 ## 标准探测命令

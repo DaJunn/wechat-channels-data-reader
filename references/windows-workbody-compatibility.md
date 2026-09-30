@@ -6,9 +6,9 @@ This Skill is portable as a file package, but live dashboard reading depends on 
 
 | Environment | Live dashboard minute export | CSV/raw analysis | Requirements |
 | --- | --- | --- | --- |
-| macOS Codex / local agent | Supported | Supported | Node.js 18+, Python 3, Kimi WebBridge, logged-in browser tab |
-| Windows local agent | Supported if Kimi WebBridge is reachable | Supported | Node.js 18+, Python 3, PowerShell, logged-in browser tab |
-| Workbody with local command execution | Supported if it can reach `KIMI_WEBBRIDGE_URL` | Supported | Node.js 18+, Python 3, local browser bridge access |
+| macOS Codex / local agent | Supported | Supported | Node.js 18+, Python 3.10+, Kimi WebBridge, logged-in browser tab |
+| Windows local agent | Supported if Kimi WebBridge is reachable | Supported | Node.js 18+, Python 3.10+, PowerShell, logged-in browser tab |
+| Workbody with local command execution | Supported if it can reach `KIMI_WEBBRIDGE_URL` | Supported | Node.js 18+, Python 3.10+, local browser bridge access |
 | Workbody without local browser bridge | Not supported | Supported | User uploads CSV/raw exported elsewhere |
 
 ## Windows Install
@@ -37,7 +37,7 @@ Analyze an exported CSV:
 python "$env:SKILL_DIR\scripts\analyze_live_trend_minutes.py" "$env:USERPROFILE\outputs\live-trend-digitized\live_trend_store_<liveObjectId>.csv" --raw "$env:USERPROFILE\outputs\live-trend-digitized\live_trend_raw_store_<liveObjectId>.json"
 ```
 
-If `python` is not available, try `py -3` or install Python 3 and enable "Add python.exe to PATH".
+If `python` is not available, try `py -3` or install Python 3.10 or newer and enable "Add python.exe to PATH".
 
 ## Workbody Use
 
